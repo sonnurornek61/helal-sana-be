@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18037974562"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18037974562"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'AW-18037974562');
-</script>
+      gtag('config', 'AW-18037974562');
+    </script>
+
+    <!-- Event snippet for Sayfa görüntüleme conversion page -->
+    <script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18037974562/Pl0SCInDsOQcEKLMlplD',
+          'value': 1.0,
+          'currency': 'TRY'
+      });
+    </script>
+
+    <!-- Click conversion reporting function -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18037974562/Pl0SCInDsOQcEKLMlplD',
+          'value': 1.0,
+          'currency': 'TRY',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,16 +149,6 @@
             border-left: 12px solid white;
         }
     </style>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18037974562"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-18037974562');
-    </script>
 </head>
 <body>
 
@@ -149,8 +166,8 @@
             Stay active, view short video ads, and gather digital points. The more time you spend, the more opportunities you have to grow your collection. Simple, engaging, and rewarding!
         </p>
 
-        <!-- DIRECT PLAY STORE LINK -->
-        <a href="https://play.google.com/store/apps/details?id=com.adcoreapp.adcore" target="_blank" rel="noopener noreferrer" class="playstore-btn">
+        <!-- DIRECT PLAY STORE LINK WITH CONVERSION TRACKING -->
+        <a href="https://play.google.com/store/apps/details?id=com.adcoreapp.adcore" onclick="return gtag_report_conversion('https://play.google.com/store/apps/details?id=com.adcoreapp.adcore');" rel="noopener noreferrer" class="playstore-btn">
              <div class="play-icon"></div>
              Download Free on Google Play
         </a>
